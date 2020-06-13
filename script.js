@@ -6,16 +6,13 @@ $(document).ready(function () {
     $("#currentDay").text(moment().format("MMMM Do YYYY"));
 
     //Create div 
-    //Needs row wiht 
-    // modify div / Append a div to the class="wordayScheduler"
+    //Needs row with column
+    // modify div / Append a div to the class="time-block"
     //Have it say the Current day using moment.js
     var container = $(".time-block");
     var timeRow = $("<div>").addClass("row");
     var timeCol = $("<div>").addClass("hour col-sm-2");
-    // var textColumn = $("<div>").addclass("past col-sm-8");
-    // newRow.append(timeColumn);
-    // container.append(timeRow);
-    // $(".hour").text("9 AM");
+    
     timeRow.append(timeCol);
     container.append(timeRow);
     $(".hour").text("9am");
@@ -25,6 +22,9 @@ $(document).ready(function () {
     var saveCol = $("<div>").addClass(" col-sm-2 saveBtn");
     scheduleCol.after(saveCol);
     $(".saveBtn").text("this is where the save button goes");
+
+    $(".row").clone().insertAfter(".row");
+
 
 
     // Create Functions
