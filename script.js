@@ -1,30 +1,40 @@
 $(document).ready(function () {
     console.log("you did it");
 
-    //Create Variables
+    //Have it say the Current day using moment.js
     // Display Date in the Jumbotron
     $("#currentDay").text(moment().format("MMMM Do YYYY"));
+
+    
+    //Create Variables
+    var container = $(".time-block");
+    var timeRow = $("<div>").addClass("row");
+    var timeCol = $("<div>").addClass("hour col-sm-2");
+    var saveCol = $("<div>").addClass("col-sm-2 saveBtn");
+    var scheduleCol = $("<div>").addClass("col-sm-8 past present future");
+    
 
     //Create div 
     //Needs row with column
     // modify div / Append a div to the class="time-block"
-    //Have it say the Current day using moment.js
-    var container = $(".time-block");
-    var timeRow = $("<div>").addClass("row");
-    var timeCol = $("<div>").addClass("hour col-sm-2");
-    
     timeRow.append(timeCol);
     container.append(timeRow);
     $(".hour").text("9am");
-    var scheduleCol = $("<div>").addClass("col-sm-8 past present future");
+    //the text area
     timeCol.after(scheduleCol);
     $(".past").text("this is where the main text appears");
-    var saveCol = $("<div>").addClass(" col-sm-2 saveBtn");
+    //the save button
     scheduleCol.after(saveCol);
     $(".saveBtn").text("this is where the save button goes");
 
-    $(".row").clone().insertAfter(".row");
-
+    // Create the additional rows
+    var newRow = $('.row');
+    for (var i = 0; i < 8; i++) {
+      newRow.clone().insertAfter(newRow);
+    };
+    
+    
+    
 
 
     // Create Functions
