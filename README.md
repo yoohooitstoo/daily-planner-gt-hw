@@ -16,7 +16,7 @@ SO THAT I can manage my time effectively
 ## Steps Taken to create Daily Planner
 9 columns with 3 rows - 2 small rows on either side with one big row in the middle
 be able to input tasks during each out block
-display a current date at the top with other calendar script
+display a current date at the top with other calendar script DONE
 save the tasks to the calendar using the save button on the right
 jquery time and have it display on screen- 
 using grey blocks, red blocks, green blocks- will use LIBRARY for this grid documentation
