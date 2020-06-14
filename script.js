@@ -22,25 +22,30 @@ $(document).ready(function () {
         "4 PM ",
         "5 PM ",
     ];
+
+    
+    //Variable for the display time using moment.js
+    var currentTime = moment().format("h A");
     //timeList.forEach(arrayFunction)
     //    for (var i =0; i < arrayLength; i ++) {
     //        timeCol.append(timeList);
     //        }
     //var timeDisplay= timeList.length;
     var container = $(".time-block");
-    for (var i = 0; i < timeList.length; i++) {
+    for (let i = 0; i < timeList.length; i++) {
     
     //the first row of the time scheduler
     var hourList = timeList[i];
     var timeRow = $("<div class='row' >");
     var timeCol = $("<div class= 'hour col-sm-2'>");
-    var saveCol = $("<button class= 'col-sm-2 saveBtn'>");
+    var saveCol = $("<button type='button' class= 'col-sm-2 saveBtn'>");
     var scheduleCol = $("<textarea class= 'col-sm-8 past'>");
     timeCol.text(hourList);
     timeRow.append(timeCol).append(scheduleCol).append(saveCol);
     container.append(timeRow);
 
-
+    //Condtiontional statement to have timeCol display color
+    // var timeFrame = 
     //Create div 
     //Needs row with column
     // modify div / Append a div to the class="time-block"
