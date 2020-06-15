@@ -1,16 +1,16 @@
 //This allows tha html page to load before becoming dynamic thru js
 $(document).ready(function () {
-    console.log("you did it");
+    // console.log("you did it");
 
     //Have it say the Current day using moment.js
     // Display Date in the Jumbotron
     $("#currentDay").text(moment().format("MMMM Do YYYY"));
 
-    //Emoty array for scheduleEntry
-    var userEntry = [];
+    //Empty array for scheduleEntry
+    // var userEntry = [];
     // Time list array
     var timeList = [
-        "9 AM ",
+        "9 AM",
         "10 AM",
         "11 AM",
         "12 PM",
@@ -26,6 +26,8 @@ $(document).ready(function () {
     var currentTime = moment().format("h A");
 
 
+
+
     // Variable for the container
     var container = $(".time-block");
 
@@ -36,13 +38,25 @@ $(document).ready(function () {
         //the first row of the time scheduler
         var hourList = timeList[i];
         //Row that stores all the material
-        var timeRow = $("<div class='row'>");
+        var timeRow = $("<div>", {
+            class: 'row'
+        });
         //Column that displays the time
-        var timeCol = $("<div class= 'hour col-sm-2'>");
+        var timeCol = $("<div>", {
+            class: 'hour col-sm-2',
+            id: "hourCol-" + i,
+        });
         //Column that has the save icon Added value class to help with storage
-        var saveCol = $("<button type='button' class= 'col-sm-2 saveBtn i:hover' value = " + i + ">");
+        var saveCol = $("<button>", {
+            class: "col-sm-2 saveBtn i:hover",
+            id: "button-" + i,
+        });
         //Column for text area and for the color scheme
-        var scheduleCol = $("<textarea class= 'col-sm-8 description'>");
+        var scheduleCol = $("<textarea>", {
+            class: 'col-sm-8 description',
+            id: "scheduleText-" + i,
+            value: localStorage.getItem(timeList[i]),
+        });
 
 
         //Allows the timeCol to house the timeList
@@ -57,39 +71,45 @@ $(document).ready(function () {
         // saveCol.addClass("");
 
 
+        //Local Storage
+        $("#button-" + i).on("click", function (e) {
+            event.preventDefault();
+            var scheduleEntry = $(this).siblings(".description").val();
+            var userKey = $(this).siblings(".hour").text();
+
+            localStorage.setItem(userKey, scheduleEntry);
+
+            console.log(scheduleEntry);
+            // var timeEntry = $(this).siblings(".hour").text;
+            // console.log(scheduleEntry);
+            // userEntry.push(scheduleEntry);
+            // console.log(userEntry);
+            // console.log(timeEntry);
+        });
+
+
+
         //Conditional statement to have timeCol display color
-        if (hourList === currentTime) {
-            scheduleCol.addClass("present");
-        }
-        if (hourList > currentTime) {
-            scheduleCol.addClass("future");
+        if (hourList.match(currentTime)) {
+            $(scheduleCol).addClass("present");
+        } else if (hourList < currentTime) {
+            $(scheduleCol).addClass("past");
         } else {
-            scheduleCol.addClass("past");
+            $(scheduleCol).addClass("future");
         };
 
-        //Local Storage
-        var textInserted = localStorage.getItem("text");
-        if (textInserted !== null) {
-            ("text", "description").val(textInserted);
-        }
 
-        //The button function for my schedule   
-        saveCol.on("click", function (e) {
-            event.preventDefault();
-            var scheduleEntry = $(".description").val();
-            console.log(scheduleEntry);
-            userEntry.push(scheduleEntry);
-            console.log(userEntry);
-        });
-        // if (scheduleEntry.length > 0); {};
-        // localStorage.setItem();
-
-
-
-        //$(".hour").text("");
-        //the text area
-
-        //the save button
 
     };
+
+
+
+
+
+
+    // console.log(currentTime);
+
+
+
+
 });
