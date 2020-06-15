@@ -1,9 +1,6 @@
 # Work Day Scheduler
 
-![badmath](https://img.shields.io/badge/DAILY-scheduler-red)
-
 ![badmath](https://img.shields.io/badge/MIT-license-brightgreen)
-
 
 ## Table of Contents
 
@@ -20,18 +17,17 @@
 
 ## Usage
 
-This Work Day Scheduler was build by using best practices of web development by using HTML, CSS, jQuery as well as Bootstrap and Moment.js Libraries.
+This Work Day Scheduler was built by using best practices of web development by using HTML, CSS, jQuery as well as Bootstrap and Moment.js Libraries.
 
-This application is intended for people who want to schedule their daily activities online.
+This daily scheduler is for those that want to be organized digitally and to be able to see there entries persist.
 
-
-The following animation demonstrates the application functionality:
+Look at the following giphy for functionality:
 
 ![Work Day Scheduler demo](./02-Homework/Assets/05-third-party-apis-homework-demo.gif)
 
 ## Credits
 
-This was a solo project comlepeted by Stuart Scott as homework for the Georgia Tech, FullStack Flex program.
+Other than conferring with TAs, tutors, and my peers; yes, This was a solo project.
 
 ## URL
 
