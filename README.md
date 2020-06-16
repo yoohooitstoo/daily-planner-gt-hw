@@ -31,7 +31,9 @@ Other than conferring with TAs, tutors, and my peers; yes, This was a solo proje
 
 ## URL
 
-[Link to Work Day Scheduler Application  ]
+Link to the Daily Schedule:
+
+https://yoohooitstoo.github.io/daily-planner-gt-hw/
 
 
 ## MIT_License 
