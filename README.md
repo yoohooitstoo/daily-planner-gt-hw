@@ -17,9 +17,7 @@
 
 ## Usage
 
-This Work Day Scheduler was built by using best practices of web development by using HTML, CSS, jQuery as well as Bootstrap and Moment.js Libraries.
-
-This daily scheduler is for those that want to be organized digitally and to be able to see their entries persist.
+This daily scheduler is for those that want to be organized digitally and to be able to see their entries persist. It was built by using best practices of web development by using HTML, CSS, jQuery as well as Bootstrap and Moment.js Libraries.
 
 Look at the following giphy for functionality:
 
