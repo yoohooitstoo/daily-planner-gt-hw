@@ -43,17 +43,17 @@ $(document).ready(function () {
         });
         //Column that displays the time
         var timeCol = $("<div>", {
-            class: 'hour col-sm-2',
+            class: 'hour col-sm-1',
             id: "hourCol-" + i,
         });
         //Column that has the save icon Added value class to help with storage
         var saveCol = $("<button>", {
-            class: "col-sm-2 saveBtn i:hover",
+            class: "col-sm-1 saveBtn i:hover",
             id: "button-" + i,
         });
         //Column for text area and for the color scheme
         var scheduleCol = $("<textarea>", {
-            class: 'col-sm-8 description',
+            class: 'col-sm-9 description',
             id: "scheduleText-" + i,
             value: localStorage.getItem(timeList[i]),
         });
@@ -71,7 +71,7 @@ $(document).ready(function () {
         // saveCol.addClass("");
 
 
-        //Local Storage
+        //Local Storage that is dictated by the location of the text 
         $("#button-" + i).on("click", function (e) {
             event.preventDefault();
             var scheduleEntry = $(this).siblings(".description").val();
@@ -80,11 +80,7 @@ $(document).ready(function () {
             localStorage.setItem(userKey, scheduleEntry);
 
             console.log(scheduleEntry);
-            // var timeEntry = $(this).siblings(".hour").text;
-            // console.log(scheduleEntry);
-            // userEntry.push(scheduleEntry);
-            // console.log(userEntry);
-            // console.log(timeEntry);
+            
         });
 
 
